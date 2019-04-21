@@ -75,6 +75,7 @@ Postman から今回の Web サービスを呼び出してみます。
 6. "**Request Response API Documentation**" ページが開きます。このページの情報を参考に、Postman に必要な情報を埋めていきます。（以下、このページを API Document と呼びます）  
 ![Request Response API Document](./images/07/ws_portal_apihelp_doc.jpg)  
 7. Postman に以下の入力をします。  
+  
    |区分|項目|値|
    |---|---|---|
    |リクエスト|メソッド|POST|
