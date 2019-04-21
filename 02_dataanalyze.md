@@ -9,25 +9,25 @@
 まず、このステップではデータの **分析** を行います。  
 これから学習しようとしているデータセットが、学習に適しているかどうかを調べるという作業です。
 
-CSV データ（表形式の構造を持つデータ）の各列の相関関係を調べて、うまく予測ができるかの "当たり" を付ける作業です。
+データ分析とは、CSV データ（表形式の構造を持つデータ）の各列の相関関係を調べて、うまく予測ができるかの "当たり" を付ける作業です。
 
 ![Heatmap](./images/02/titanic_heatmap.jpg)
 
-> あとで改めて確認しますが、今回使用するタイタニックの乗船リストは、予測したい値（目的変数と言ったりします）と与えるパラメーター（説明変数と言ったりします）との間には相関関係がありそうです。うまく学習できそうなデータです。
+> あとで改めて確認しますが、今回使用するタイタニックの乗船リストは、予測したい値（目的変数と言います）と与えるパラメーター（説明変数と言います）との間には相関関係がありそうです。質のよい学習できそうなデータです。
 
 ---
 
 ## Azure Machine Learning Studio にサインインする
 
-早速データセットを Experiment に取り込み、分析をしていきます。  
-Azure Machine Learning Studio にサインインするところからスタートします。
+それではデータセットを Experiment に取り込み、分析をしていきます。  
+Azure Machine Learning Studio にサインインするところから始めます。
 
 1. [**Azure Machine Learning Studio**](https://studio.azureml.net/) にアクセスして [**Sign In**] します。（2か所のどちらからでもよい）  
 ![Sign In](./images/02/mlstudio_signin.jpg)
 2. **Experiments** 画面に遷移すれば OK です。  
 ![Experiments](./images/02/studio_experiments.jpg)
 
-> このコンテンツでは、Azure Machine Learning Studio の FREE レベルを使用しています。  
+> このコンテンツでは、Azure Machine Learning Studio の FREE レベルを使用します。  
 > 複雑なモデルを作成したい場合や高速に学習を行いたい場合は、STARDARD レベルを使用することもできます。STANDARD レベルを使用するには Azure サブスクリプションが必要です。STANDARD レベルで有償の Workspace を作成する手順は [STANDARD レベルの Workspace 作成手順](./a01_createworkspace.md) を参照してください。
 
 ---
@@ -41,7 +41,7 @@ Kaggle から取得した [**タイタニック号の乗船リスト**](https://
 3. ページ下部にある [**NEW**] をクリックして、続いて [**DATASET**]-[**FROM LOCAL FILE**] をクリックします。  
 ![Select New](./images/02/new_for_datasets.jpg)  
 ![From Local File](./images/02/new_dataset_fromlocalfile.jpg)
-4. [**ファイルを選択**] をクリックして、"titanic_train.csv" を選択します。  
+4. [**ファイルを選択**] をクリックして、"titanic_train.csv" (train.csv の名前を変更したもの) を選択します。  
 "EXISTING DATASET" および "SELECT A TYPE FOR THE NEW DATASET" はデフォルトのままでかまいません。
 ![Update a new dataset](./images/02/upload_a_new_dataset.jpg)  
    - EXISTING DATASET: ファイル名と同じ
@@ -66,7 +66,7 @@ Azure Machine Learning Studio では、データの分析、モデルの作成�
 3. 空白の Experiment が新規に作成されると以下の画面が表示されます。  
 ![Blank Experiment](./images/02/blank_experiment.jpg)  
 4. (必須ではありませんが) Experiment のタイトルを変更します。Experiment の左上のタイトル部分をクリックして適切なものに変更します。（ここでは "Titanic" としておきます）  
-タイトルは次に Experiment が保存されるタイミングで合わせて保存されます。  
+タイトルは、モデルの操作を行って Experiment が保存されるタイミングで一緒に保存されます。  
 ![Rename Title](./images/02/rename_experiment_title.jpg)
 
 ---
@@ -84,22 +84,21 @@ Experiment ができたので、ここにデータセットを配置します。
 ## データを分析
 
 次に、データセットが学習に適したものかを **分析** します。  
-どんなデータセットでも機械学習に使えるわけではないため、学習を始める前にデータの質を見てみます。
+どんなデータセットでも機械学習に使えるわけではないため、学習を始める前にデータの "品質" を見てみます。
 
 1. Experiment に配置した "**titanic_train.csv**" モジュールの下側の出力ノードを **右クリック** します。メニューが表示されたら **Visualize** を選択します。  
 ![Visualize Dataset](./images/02/dataset_visualize.jpg)
 2. データセットのサイズとデータの一部とが表示されます。  
-12 列のデータ 891行からなるデータだと分かります。
+このデータセットは 12 列のデータ 891行からなるデータだと分かります。
 ![Data Size](./images/02/titanic_train_datasize.jpg)  
-3. 各列に欠損値がどのくらいあるか調べてみます。各列のヘッダーを順にクリックし、"**Statistics**" の "**Missing Values**" を見ます。これが欠損値の個数です。  
+3. 各列に欠損値がどのくらいあるか調べます。各列のヘッダーを順にクリックし、"**Statistics**" の "**Missing Values**" を見ます。これがそれぞれの列の欠損値の個数です。  
 今回のデータセットでは、Age, Cagin, Embarked 列に欠損があることが分かります。  
 ![Check Missing Values](./images/02/check_missing_values.jpg)  
-   > 欠損値がある場合は、その列は使わない、その行を削除する、平均値を入れる、固定値 (0 など) を入れるなど、補う方法があります。どの方法を取るかは、モデルの目的や列の意味合いによって異なります。またはいくつかの補完をしたデータでモデルを学習して、それぞれを比較することもできます。  
-今回のデータセットは、平均値を使う列 (Age) と欠損値を含む列を除く列 (Cabin, Embarked) とを使い分けます。  
-欠損値以外の値（標準偏差など）も参照するほうがよいのですが、今回はこの後の手順で必要になる欠損値のみを確認しています。
+   > 欠損値がある場合は、その列は使わない、その行を削除する、平均値を入れる、固定値 (0 など) を入れるなど、補う方法があります。どの方法を取るかは、モデルの目的や列の意味合いによって異なります。異なる補完をしたデータで学習して、それぞれのモデルを比較することもあります。  
+   > 今回のデータセットは、Age 列では平均値を使い、Cabin, Embarked 列では欠損値を含む行を削除することにします。  
+
 4. 続いて、"Survived" 列（= 助かったかどうか、今回予測したい列）と他の列との **相関関係** を見てみます。  
 **Survived** 列のヘッダーを選択します。その状態で、Ctrl キーを押しながら別の列ヘッダーをクリックします。  
-分布が散らばっていれば。
 ![Select Survived Column](./images/02/select_survived_col.jpg)  
 ![Compare To](./images/02/survived_compared_to.jpg)  
    > Survived の値は 0 か 1 かのどちらかであり、例えば 0.5 ということはないため、散らばりが分かりづらいかもしれません。  
@@ -111,9 +110,9 @@ Experiment ができたので、ここにデータセットを配置します。
 
 ## 相関関係をもっと分かりやすくする
 
-上の手順で列同士の相関関係の概要が分かったと思いますが、確認の操作が面倒で、直感的に分かりづらいかもしれません。
+上の手順で列同士の相関関係の概要が分かりますが、確認の操作が面倒であり、かつ直感的ではないかもしれません。
 
-もっと全体を俯瞰した形で見てみます。  
+そこで相関関係を、もっと全体を俯瞰した形で見てみます。  
 ここでは **Jupyter Notebook** を使ってデータセットを見てみます。
 
 1. "titanic_train.csv" の下側のノードを **右クリック** します。メニューが表示されたら **Open in a new Notebook** を選択し、さらに **Python 3** を選択します。
