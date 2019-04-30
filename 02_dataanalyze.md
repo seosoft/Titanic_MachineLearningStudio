@@ -6,14 +6,14 @@
 
 ![Azure Machine Learning Studio](./images/02/msstudio_experiment.jpg)
 
-まず、このステップではデータの **分析** を行います。  
-これから学習しようとしているデータセットが、学習に適しているかどうかを調べるという作業です。
+このステップでは、データの **分析** を行います。  
+これから学習しようとしているデータセットが、学習に適しているかどうかを調べる作業です。
 
-データ分析とは、CSV データ（表形式の構造を持つデータ）の各列の相関関係を調べて、うまく予測ができるかの "当たり" を付ける作業です。
+ここでのデータ分析とは、CSV データ（表形式の構造を持つデータ）の各列の相関関係を調べて、うまく学習できそうかの "当たり" を付ける作業です。
 
 ![Heatmap](./images/02/titanic_heatmap.jpg)
 
-> あとで改めて確認しますが、今回使用するタイタニックの乗船リストは、予測したい値（目的変数と言います）と与えるパラメーター（説明変数と言います）との間には相関関係がありそうです。質のよい学習できそうなデータです。
+> このあとで確認しますが、今回使用するタイタニックの乗船リストは、予測したい値（目的変数と言います）と与えるパラメーター（説明変数と言います）との間には相関関係があり、質のよい学習できそうなデータです。
 
 ---
 
@@ -24,7 +24,7 @@ Azure Machine Learning Studio にサインインするところから始めま�
 
 1. [**Azure Machine Learning Studio**](https://studio.azureml.net/) にアクセスして [**Sign In**] します。（2か所のどちらからでもよい）  
 ![Sign In](./images/02/mlstudio_signin.jpg)
-2. **Experiments** 画面に遷移すれば OK です。  
+2. **Experiments** 画面が表示されれば OK です。  
 ![Experiments](./images/02/studio_experiments.jpg)
 
 > このコンテンツでは、Azure Machine Learning Studio の FREE レベルを使用します。  
@@ -36,8 +36,8 @@ Azure Machine Learning Studio にサインインするところから始めま�
 
 Kaggle から取得した [**タイタニック号の乗船リスト**](https://www.kaggle.com/c/titanic/data) を、自分の Azure Machine Learning Studio にアップロードします。
 
-1. Kaggle からローカル PC に "train.csv" をダウンロードしたことを確認します。まだ入手していない場合は、[前のステップ](./01_preparedata.md) を参照して、データセットを取得してください。
-2. (必須ではありませんが) "train.csv" のファイル名を "**titanic_train.csv**" に変更します。これはアップロード後に、何のデータセットかを分かりやすくするためです。
+1. Kaggle からローカル PC に "train.csv" をダウンロード済みであることを確認します。まだ入手していない場合は、[前のステップ](./01_preparedata.md) を参照して、データセットを取得してください。
+2. "train.csv" のファイル名を "**titanic_train.csv**" に変更します。これは必須ではありませんが、この後の手順で何のデータセットかを分かりやすくするためです。
 3. ページ下部にある [**NEW**] をクリックして、続いて [**DATASET**]-[**FROM LOCAL FILE**] をクリックします。  
 ![Select New](./images/02/new_for_datasets.jpg)  
 ![From Local File](./images/02/new_dataset_fromlocalfile.jpg)
@@ -89,9 +89,9 @@ Experiment ができたので、ここにデータセットを配置します。
 1. Experiment に配置した "**titanic_train.csv**" モジュールの下側の出力ノードを **右クリック** します。メニューが表示されたら **Visualize** を選択します。  
 ![Visualize Dataset](./images/02/dataset_visualize.jpg)
 2. データセットのサイズとデータの一部とが表示されます。  
-このデータセットは 12 列のデータ 891行からなるデータだと分かります。
+このデータセットは 12 列のデータ 891行からなるデータであることが分かります。
 ![Data Size](./images/02/titanic_train_datasize.jpg)  
-3. 各列に欠損値がどのくらいあるか調べます。各列のヘッダーを順にクリックし、"**Statistics**" の "**Missing Values**" を見ます。これがそれぞれの列の欠損値の個数です。  
+3. 各列に欠損値がどのくらいあるか調べます。各列のヘッダーを順にクリックし、"**Statistics**" の "**Missing Values**" を見ます。これがそれぞれの列で値が欠損している個数です。  
 今回のデータセットでは、Age, Cagin, Embarked 列に欠損があることが分かります。  
 ![Check Missing Values](./images/02/check_missing_values.jpg)  
    > 欠損値がある場合は、その列は使わない、その行を削除する、平均値を入れる、固定値 (0 など) を入れるなど、補う方法があります。どの方法を取るかは、モデルの目的や列の意味合いによって異なります。異なる補完をしたデータで学習して、それぞれのモデルを比較することもあります。  
