@@ -35,8 +35,8 @@
    ![Select DEVTEST Standard Plan](./images/a01/select_devtest_standard_plan.jpg)
 
    > 実務などでは "S1 Standard" 以上の有償プランを利用してください。
-6. [作成] をクリックして Workspace を作成します。しばらく待つと Workspace が作成されます。 
-![Create Workspace](./images/a01/create_workspace.jpg)
+6. [作成] をクリックして Workspace を作成します。しばらく待つと Workspace が作成されます。
+   ![Create Workspace](./images/a01/create_workspace.jpg)
 
 ---
 
