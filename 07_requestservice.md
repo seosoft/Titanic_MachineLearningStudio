@@ -2,7 +2,14 @@
 
 [前のステップ](./06_deploymodel.md) で、予測モデルをクラウドに発行しました。
 
-ここからは、発行した Web サービスを呼び出してみます。
+ここからは、発行した Web サービスを呼び出してみます。  
+発行したサービスは REST API に対応しているので、多くの言語や環境から呼び出せます。
+
+ここでは、以下のツールから呼び出してみます。
+
+- Azure Machine Learning Web Services ポータル
+- Excel
+- Postman
 
 ---
 
@@ -14,7 +21,7 @@
   [**Test preview**] をクリックします。  
 ![Web Service](./images/07/web_service_page_testpreview.jpg)  
 
-   > 一度 Machine Learning Studio を閉じていた場合などは、Machine Learning Studio の [**WEB SERVICES**] メニューを選択して、 "**Titanic [Predict Exp.]**" をクリックすると、上の画面に遷移できます。  
+   一度 Machine Learning Studio を閉じていた場合などは、Machine Learning Studio の [**WEB SERVICES**] メニューを選択して、 "**Titanic [Predict Exp.]**" をクリックすると、上の画面に遷移できます。  
 
    ![Studio Web Services](./images/07/studio_web_services.jpg)  
 
@@ -97,7 +104,7 @@ Postman から今回の Web サービスを呼び出してみます。
 機械学習のデータの用意、学習、クラウドへの発行、クライアントからの利用について、実際に操作してみました。  
 [公式の Quickstart](https://docs.microsoft.com/en-us/azure/machine-learning/studio/create-experiment) など他の資料も参照して、機械学習の理解を深めてください。
 
-このコンテンツへの意見、改善の提案などは Github の Issue, Pull request でお知らせください。
+このコンテンツへの意見、改善の提案などは、このリポジトリの Issue, Pull request でお知らせください。
 
 ---
 
