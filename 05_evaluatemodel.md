@@ -55,13 +55,13 @@
 
 別のアルゴリズムで、今回のデータセット（Split Dataした後のデータセット）を訓練してみます。
 
-手順は [**前のステップ**](./04_createmodel.md) からこのステップの
+手順は [**前のステップ**](./04_createmodel.md) と、このステップとで行った
 
 - アルゴリズムの決定
 - モデルを訓練する
 - モデルを評価する
 
-と同様の手順です。  
+と同様のものです。  
 使用するアルゴリズムは今回は、 **Two-Class Neural Network** (モジュール一覧で、[Machine Learning]-[Initial Model]-[Two-Class Neural Network]) にします。
 
 ![Two-Class Neural Network](./images/05/another_model_neural_network.jpg)
@@ -104,5 +104,5 @@
 
 ここまでで、学習モデルを [作成](./04_createmodel.md) し、どの程度 "賢い" のかを評価しました。
 
-次のステップでは、作成した学習モデルを Web サービスとしてクラウドに発行します。  
+次のステップでは、作成した学習モデルを Web サービスとして [クラウドに発行](./06_deploymodel.md) します。  
 せっかく作ったモデルなので、サービスとして利用できるようにしましょう。

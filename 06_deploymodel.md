@@ -8,8 +8,10 @@
 
 ## Experiment 全体を実行する
 
-Web サービス化するメニュー項目が無効化されているかもしれません。Web サービスを作成するには、メニュー項目を有効にしなければなりません。  
-![Disabled Setup Web Service Menu](./images/06/disabled_setup_web_service_menu.jpg)
+Web サービス化するメニュー項目が無効化されているかもしれません。  
+   ![Disabled Setup Web Service Menu](./images/06/disabled_setup_web_service_menu.jpg)
+
+Web サービスを作成するには、メニュー項目を有効にしなければなりません。
 
 1. メニュー項目を有効にするには、Experiment **全体を改めて実行** します。  
 [Run]-[Run] で Experiment 全体を実行できます。  
@@ -30,8 +32,7 @@ Web サービスとして発行するためには、**予測モデル** を作�
    > Experiment に複数の Train Model を配置している場合は、どちらの Train Model を Web サービス化するかを選択します。
 
    ![Select Train Model](./images/06/select_train_model_before_setup_ws.jpg)  
-2. ウィンドウ下部の [SET UP WEB SERVICE]-[Predictive Web Service \[Recommended\]] を選択します。
-
+2. ウィンドウ下部の [SET UP WEB SERVICE]-[Predictive Web Service \[Recommended\]] を選択します。  
    ![Predictive Web Service](./images/06/predictive_web_service.jpg)
 3. 少し待つとWeb サービスが自動生成されます。  
 この時点では、Web サービスはまだクラウドへは発行されていません。  
