@@ -61,16 +61,16 @@ train.csv は以下の列で構成されます。
 
 |列名|定義|値|
 |---|---|---|
-|survival|助かったか|0 = 助からなかった, 1 = 助かった|
-|pclass|客室の等級|1 = 一等, 2 = 二等, 3 = 三等|
-|sex|性別|female, male|
-|age|年齢| |
-|sibsp|乗船した兄弟・配偶者の人数| |
-|parch|乗船した親・子供の人数| |
-|ticket|チケット番号| |
-|fare|乗船料| |
-|cabin|客室番号| |
-|embarked|乗船した港|C = Cherbourg, Q = Queenstown, S = Southampton|
+|Survival|助かったか|0 = 助からなかった, 1 = 助かった|
+|Pclass|客室の等級|1 = 一等, 2 = 二等, 3 = 三等|
+|Sex|性別|female, male|
+|Age|年齢| |
+|Sibsp|乗船した兄弟・配偶者の人数| |
+|Parch|乗船した親・子供の人数| |
+|Ticket|チケット番号| |
+|Fare|乗船料| |
+|Cabin|客室番号| |
+|Embarked|乗船した港|C = Cherbourg, Q = Queenstown, S = Southampton|
 
 survival 以外の列の値から **survival 列を予測** するのが、今回の学習の目的です。  
 

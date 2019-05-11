@@ -38,6 +38,7 @@
    - Sex
    - Age
    - SibSp
+   - Parch
    - Fare
 
    ![Select Columns](./images/03/select_columns.jpg)  
