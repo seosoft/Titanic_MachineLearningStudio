@@ -43,7 +43,8 @@ Web サービスとして発行するためには、**予測モデル** を作�
 ## 予測モデルを変更する
 
 自動生成された予測モデルでは、予測モデルへの入力（**Web service input**）は "Select Columns in Dataset" に接続されています。  
-この場合は、今回の学習に使用しなかった列（PassengerId, Name など）もWeb サービスのパラメーターとして渡さなければなりません。
+この場合は、今回の学習に使用しなかった列（PassengerId, Name など）もWeb サービスのパラメーターとして渡さなければなりません。  
+不要な入力をしなくてもいいように、予測モデルの Experiment を変更します。
 
 1. "**Web service input**" の接続を変更します。  
 "Web service input" と "Select Columns in Dataset" との間の接続を選択します。続いて、**Del キー** を押して、接続を削除します。
