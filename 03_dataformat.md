@@ -34,7 +34,6 @@
 
    - Survived
    - Pclass
-   - Name
    - Sex
    - Age
    - SibSp
