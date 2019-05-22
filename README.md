@@ -24,7 +24,7 @@ AI 技術を理解する上でも、シンプルな機械学習のほうが直�
 1. [データを用意する](./01_preparedata.md)
 2. [データを分析する](./02_dataanalyze.md)
 3. [データを整形する](./03_dataformat.md)
-4. [モデルを作成する](./04_trainmodel.md)
+4. [モデルを作成する](./04_createmodel.md)
 5. [学習済みモデルを評価する](./05_evaluatemodel.md)
 6. [予測モデル（学習済みモデル）を発行する](./06_deploymodel.md)
 7. [発行したサービスを利用する](./07_requestservice.md)
