@@ -44,7 +44,7 @@ Kaggle から取得した [**タイタニック号の乗船リスト**](https://
 4. [**ファイルを選択**] をクリックして、"titanic_train.csv" (train.csv の名前を変更したもの) を選択します。  
 "EXISTING DATASET" および "SELECT A TYPE FOR THE NEW DATASET" はデフォルトのままでかまいません。
 ![Update a new dataset](./images/02/upload_a_new_dataset.jpg)  
-   - EXISTING DATASET: ファイル名と同じ
+   - ENTER A NAME FOR THE NEW DATASET: ファイル名と同じ
    - SELECT A TYPE FOR THE NEW DATASET: "Generic CSV File with a header (.csv)"  
   ※今回の titanic_train.csv は 1行目がヘッダーなので "with a header" を選択します。他のデータセットでは、形式に応じて適切なものを選択します。  
 5. 右下のチェック (Ok) をクリックして、データセットをアップロードします。
