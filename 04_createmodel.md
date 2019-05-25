@@ -52,7 +52,7 @@
 
 今回は **Two-class SVM** を使ってみます。
 
-1. モジュール一覧で、[Machine Learning]-[Initial Model]-[**Two-Class Support Vector Machine**] を Experiment にドロップします。  
+1. モジュール一覧で、[Machine Learning]-[Initial Model]-[Classification][**Two-Class Support Vector Machine**] を Experiment にドロップします。  
 ![Two-class SVM](./images/04/twoclass_svm.jpg)
 
 ---
