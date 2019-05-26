@@ -50,6 +50,7 @@ Machine Learning Studio の [**Web Services**] ページでは、クライアン
 確認画面が出た後で [**名前を付けて保存**] ダイアログが開くので、PC に保存します。
 ![Web Services Page Excel Link](./images/07/studio_ws_excel.jpg)  
 2. 保存した Excel ファイルを開きます。  
+保護ビューになっている場合は、[**編集を有効にする**] をクリックします。また、[**新しい Office アドイン**] ウインドウが表示された場合、**Azure Machine Learning** の[**このアドインを信頼**] をクリックします。
 [**Azure Machine Learning**] 作業ウィンドウで、[**Titanic \[Predict Exp.\]**] をクリックします。  
 ![Excel Work Window](./images/07/excel_work_ws.jpg)  
 3. [**Use sample data**] をクリックします。自動的にサンプルデータが Excel のシート上に表示されます。  
@@ -86,10 +87,10 @@ Postman から今回の Web サービスを呼び出してみます。
    |区分|項目|値|
    |---|---|---|
    |リクエスト|メソッド|POST|
-   |リクエスト|URL|API Document の **Request-Response**|
-   |Headers|Authorization|"Bearer " + API Document の **Primary Key**|
+   |リクエスト|URL|API Document ページの **Request URI**|
+   |Headers|Authorization|"Bearer " + Consume ページの **Primary Key**|
    |Header|Content-Type|application/json|
-   |Body|("Raw" に切り替えて)|API Document の **Sample Request**|
+   |Body|("Raw" に切り替えて)|API Document ページの **Sample Request**|
 
    ![Postman Input 1](./images/07/postman_input1_1.jpg)  
    ![Postman Input 2](./images/07/postman_input1_2.jpg)  
