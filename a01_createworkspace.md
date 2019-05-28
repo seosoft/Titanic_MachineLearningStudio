@@ -54,3 +54,11 @@ Workspace ができたので、Azure Machine Learning Studio で操作してみ�
    ![Select Workspace](./images/a01/studio_select_workspace.jpg)
 
 以上で、STANDARD レベルの Workspace で学習やサービスの公開をすることができます。
+
+---
+
+## 注意) リソースグループの削除
+
+ハンズオンのコンテンツをすべて終了して作成したリソースが不要になったら、Azure ポータルで今回作成した **リソースグループを削除** してください。
+
+リソースグループが残っていると、継続して課金されます。
