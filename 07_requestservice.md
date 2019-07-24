@@ -89,7 +89,7 @@ Postman から今回の Web サービスを呼び出してみます。
    |リクエスト|メソッド|POST|
    |リクエスト|URL|API Document ページの **Request URI**|
    |Headers|Authorization|"Bearer " + Consume ページの **Primary Key**|
-   |Header|Content-Type|application/json|
+   |Headers|Content-Type|application/json|
    |Body|("Raw" に切り替えて)|API Document ページの **Sample Request**|
 
    ![Postman Input 1](./images/07/postman_input1_1.jpg)  
