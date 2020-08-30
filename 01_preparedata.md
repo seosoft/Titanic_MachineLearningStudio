@@ -72,7 +72,7 @@ train.csv は以下の列で構成されます。
 |Cabin|客室番号| |
 |Embarked|乗船した港|C = Cherbourg, Q = Queenstown, S = Southampton|
 
-survival 以外の列の値から **survival 列を予測** するのが、今回の学習の目的です。  
+survived 以外の列の値から **survived 列を予測** するのが、今回の学習の目的です。  
 
 > test.csv は学習済みモデルをテストするためのデータなので、"survival" 列はありません。このコンテンツの最後のステップで、発行した学習済みモデルを利用する際のデータとして使用します。
 
